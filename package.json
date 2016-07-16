@@ -1,0 +1,27 @@
+{
+  "name": "angular-bittorrent-peerid",
+  "version": "1.0.2",
+  "description": "A native AngularJS implement for bittorrent-peerid.",
+  "main": "angular-bittorrent-peerid.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mayswind/angular-bittorrent-peerid.git"
+  },
+  "keywords": [
+    "angular",
+    "bittorrent",
+    "peerid"
+  ],
+  "author": "MaysWind <i@mayswind.net>",
+  "license": "MIT",
+  "dependencies": {
+    "angular": "*"
+  },
+  "bugs": {
+    "url": "https://github.com/mayswind/angular-bittorrent-peerid/issues"
+  },
+  "homepage": "https://github.com/mayswind/angular-bittorrent-peerid#readme"
+}
