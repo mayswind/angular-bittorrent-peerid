@@ -5,6 +5,7 @@ bower_components/
 *.log
 
 build/
+dist/
 ### Windows template
 # Windows image file caches
 Thumbs.db
@@ -40,6 +41,7 @@ $RECYCLE.BIN/
 # Reference: https://intellij-support.jetbrains.com/hc/en-us/articles/206544839
 
 .idea/
+*.iml
 
 # Mongo Explorer plugin:
 .idea/mongoSettings.xml
