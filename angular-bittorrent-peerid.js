@@ -240,9 +240,6 @@ angular.module('angularBittorrentPeerid').factory('peeridUtils', function () {
 });
 
 angular.module('angularBittorrentPeerid').provider('bittorrentPeeridService', function () {
-    var UNKNOWN = 'unknown';
-    var FAKE = 'fake';
-
     // Az style two byte code identifiers to real client name
     var azStyleClients = {};
     var azStyleClientVersions = {};
@@ -578,8 +575,6 @@ angular.module('angularBittorrentPeerid').provider('bittorrentPeeridService', fu
         var parseClientFromPeerid = function (peerId) {
             var buffer = utils.getUtf8Data(peerId);
             var client = null;
-            var version = null;
-            var data = null;
 
             if (utils.isPossibleSpoofClient(peerId)) {
                 if ((client = utils.decodeBitSpiritClient(peerId, buffer))) return client;
@@ -590,13 +585,13 @@ angular.module('angularBittorrentPeerid').provider('bittorrentPeeridService', fu
             // See if the client uses Az style identification
             if (utils.isAzStyle(peerId)) {
                 if ((client = getAzStyleClientName(peerId))) {
-                    version = getAzStyleClientVersion(client, peerId);
+                    var version = getAzStyleClientVersion(client, peerId);
 
                     // Hack for fake ZipTorrent clients - there seems to be some clients
                     // which use the same identifier, but they aren't valid ZipTorrent clients
                     if (client.startsWith('ZipTorrent') && peerId.startsWith('bLAde', 8)) {
                         return {
-                            client: UNKNOWN + ' [' + FAKE + ': ' + name + ']',
+                            client: 'Unknown [Fake: ZipTorrent]',
                             version: version
                         };
                     }
@@ -645,7 +640,8 @@ angular.module('angularBittorrentPeerid').provider('bittorrentPeeridService', fu
             if ((client = utils.decodeBitCometClient(peerId, buffer))) return client;
 
             // See if the client identifies itself using a particular substring
-            if ((data = getSimpleClient(peerId))) {
+            var data = getSimpleClient(peerId);
+            if (data) {
                 client = data.client;
 
                 // TODO: handle simple client version numbers
