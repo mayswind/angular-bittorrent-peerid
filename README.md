@@ -1,6 +1,6 @@
 # angular-bittorrent-peerid
 
-![Bower](https://img.shields.io/bower/v/angular-bittorrent-peerid.svg)
+![NPM](https://img.shields.io/npm/v/angular-bittorrent-peerid.svg)
 
 A native AngularJS implement for [bittorrent-peerid](https://github.com/fisch0920/bittorrent-peerid).
 
