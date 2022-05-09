@@ -75,11 +75,7 @@ angular.module('angularBittorrentPeerid').factory('peeridUtils', function () {
              *
              * KTorrent 3 appears to use a dash rather than a final character.
              */
-            if (peerId.substring(1, 3) === 'FG') return true;
-            if (peerId.substring(1, 3) === 'LH') return true;
-            if (peerId.substring(1, 3) === 'NE') return true;
-            if (peerId.substring(1, 3) === 'KT') return true;
-            if (peerId.substring(1, 3) === 'SP') return true;
+            if (['FG', 'LH', 'NE', 'KT', 'SP'].includes(peerId.substring(1, 3))) return true
 
             return false;
         },

@@ -1,6 +1,6 @@
 {
   "name": "angular-bittorrent-peerid",
-  "version": "1.3.2",
+  "version": "1.3.4",
   "description": "A native AngularJS implement for bittorrent-peerid.",
   "main": "angular-bittorrent-peerid.js",
   "scripts": {
